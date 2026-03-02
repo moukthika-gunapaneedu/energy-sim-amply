@@ -103,4 +103,7 @@ plt.plot(df["time"], df["price_or_demand"], label="Demand (Proxy)")
 plt.plot(df["time"], df["battery_charge"], label="Battery Charge (%)")
 plt.title("30-Day Demand and Battery Simulation")
 plt.legend()
-plt.show()
+
+plt.tight_layout()
+plt.savefig("simulation_plot.png", dpi=200)
+print("Saved plot to simulation_plot.png")
