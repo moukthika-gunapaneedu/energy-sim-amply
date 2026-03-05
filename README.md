@@ -1,5 +1,3 @@
-# energy-sim-amply
-
 ## Energy Simulation for Battery Optimization
 
 This project simulates how a compute cluster could intelligently decide **when to charge a battery, run on grid power, or run on battery** using real grid data.
