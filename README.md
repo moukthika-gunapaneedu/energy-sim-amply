@@ -1,6 +1,6 @@
 # energy-sim-amply
 
-# Energy Simulation for Battery Optimization
+## Energy Simulation for Battery Optimization
 
 This project simulates how a compute cluster could intelligently decide **when to charge a battery, run on grid power, or run on battery** using real grid data.
 
@@ -10,7 +10,7 @@ This prototype is part of an exploration into **energy-aware scheduling for AI /
 
 ---
 
-# Project Goal
+## Project Goal
 
 The goal is to develop a model that:
 
@@ -27,68 +27,65 @@ The decision engine determines whether the system should:
 
 ---
 
-# Data Sources
+## Data Sources
 
 ### Real Data
-Source: EIA API  
+
+**Source:** EIA API  
 https://www.eia.gov/opendata/
 
-Currently pulled:
-
+**Currently pulled:**
 - Hourly grid demand (used as a proxy for electricity price)
 
-Future integration:
-
+**Future integration:**
 - Real hourly electricity prices
 - Demand forecasts
 
 ---
 
-# Simulated System Components
+## Simulated System Components
 
-## Battery Model
+### Battery Model
 
 | Variable | Description |
-|--------|-------------|
-Battery Charge | 0–100% battery state
-Charge Rate | kW added per hour
-Discharge Rate | kW consumed per hour
-Min Threshold | Battery never below 20%
-Max Threshold | Battery never above 95%
+|----------|-------------|
+| Battery Charge | 0–100% battery state |
+| Charge Rate | kW added per hour |
+| Discharge Rate | kW consumed per hour |
+| Min Threshold | Battery never below 20% |
+| Max Threshold | Battery never above 95% |
 
----
-
-## Compute Demand Model
+### Compute Demand Model
 
 Simulated GPU cluster metrics:
 
 | Variable | Range |
-|--------|-------|
-GPU Utilization | 0–100%
-Jobs in Queue | 0–50 jobs
-Power Draw | Derived from utilization
+|----------|-------|
+| GPU Utilization | 0–100% |
+| Jobs in Queue | 0–50 jobs |
+| Power Draw | Derived from utilization |
 
 ---
 
-# Decision Engine
+## Decision Engine
 
 Every hour the model evaluates:
 
-- grid demand (price proxy)
-- compute demand
-- battery state
+- Grid demand (price proxy)
+- Compute demand
+- Battery state
 
-Possible decisions:
+**Possible decisions:**
 
 | State | Condition |
-|------|-----------|
-Charge battery | Grid energy is cheap and battery is not full
-Run off grid | Grid energy is cheap and compute demand is high
-Run off battery | Grid energy is expensive and battery has charge
+|-------|-----------|
+| Charge battery | Grid energy is cheap and battery is not full |
+| Run off grid | Grid energy is cheap and compute demand is high |
+| Run off battery | Grid energy is expensive and battery has charge |
 
 ---
 
-# Visualization
+## Visualization
 
 The simulation outputs a 30-day visualization showing:
 
@@ -102,42 +99,51 @@ Example output:
 
 ---
 
-# Project Structure
+## Project Structure
 
-energy-sim-amply
-│
-├── simulation.py # main simulation script
-├── README.md
-└── requirements.txt
+```
+energy-sim-amply/
+├── simulation.py          # Main simulation script
+├── README.md              # Project documentation
+└── requirements.txt       # Python dependencies
+```
 
 ---
 
-# Installation
+## Installation
 
 Clone the repository:
+
+```bash
 git clone https://github.com/moukthika-gunapaneedu/energy-sim-amply.git
 cd energy-sim-amply
+```
 
 Install dependencies:
+
+```bash
 pip install pandas numpy matplotlib requests
+```
 
 ---
 
-# Environment Setup
+## Environment Setup
 
 Set your EIA API key as an environment variable:
+
+```bash
 export EIA_API_KEY=your_api_key_here
+```
 
-
-You can obtain a free key here:
-
-https://www.eia.gov/opendata/
+You can obtain a free key here: https://www.eia.gov/opendata/
 
 ---
 
-# Run the Simulation
+## Run the Simulation
 
+```bash
 python simulation.py
+```
 
 The script will:
 
@@ -148,10 +154,9 @@ The script will:
 
 ---
 
-# Current Status
+## Current Status
 
-Completed:
-
+**Completed:**
 - EIA API integration
 - Battery simulation
 - Compute demand simulation
@@ -160,10 +165,9 @@ Completed:
 
 ---
 
-# Next Steps
+## Next Steps
 
-Planned improvements:
-
+**Planned improvements:**
 - Integrate real hourly electricity price data
 - Add grid demand forecasting
 - Incorporate time-of-day and weekday patterns
@@ -172,7 +176,7 @@ Planned improvements:
 
 ---
 
-# Technologies Used
+## Technologies Used
 
 - Python
 - Pandas
@@ -183,9 +187,6 @@ Planned improvements:
 
 ---
 
-# Team
+## Team
+
 Amply
-
-
-
-# Project Structure
