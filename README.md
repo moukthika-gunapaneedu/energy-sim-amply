@@ -185,6 +185,4 @@ The script will:
 
 ---
 
-## Team
-
-Amply
+### Team: Amply
